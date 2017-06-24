@@ -11,7 +11,7 @@ set log_path C:\Users\Linuxclub\Desktop\net_test.log
 
 
 rem デフォルトゲートウェイにPINGを実行し疎通試験。
-
+:TEST
 ping gateway_ip -n 5
 if errorlevel 0 GOTO OK
 if errorlevel 1 GOTO NG
