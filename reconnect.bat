@@ -16,7 +16,7 @@ ping gateway_ip -n 5
 if errorlevel 0 GOTO OK
 if errorlevel 1 GOTO NG
 
-rem 疎通検査合格の場合
+rem 疎通試験合格の場合
 :OK
 echo %date% %time% OK>> log_path
 GOTO END
