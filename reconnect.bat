@@ -13,8 +13,16 @@ set log_path C:\Users\Linuxclub\Desktop\net_test_log.csv
 rem 実行回数を保存する変数宣言
 set /a count=0
 
-rem デフォルトゲートウェイにPINGを実行し疎通試験。
+GOTO TEST
+
 :TEST
+rem ログファイルの行数確認 10行以上であれば先頭1行を削除
+set line
+find /v/c log_path > line
+if line geq 10 homirun.exe 
+rem homirun.exeはファイル先頭一行削除のプログラム
+
+rem デフォルトゲートウェイにPINGを実行し疎通試験。
 ping gateway_ip -n 5
 if errorlevel 0 GOTO OK
 if errorlevel 1 GOTO NG
